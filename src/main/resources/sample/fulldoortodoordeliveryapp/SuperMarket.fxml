@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.fulldoortodoordeliveryapp.SuperMarket">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <VBox prefHeight="650.0" prefWidth="200.0" styleClass="background" stylesheets="@Main.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="SuperMarketProfilePic" fitHeight="175.0" fitWidth="174.0" layoutX="13.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </AnchorPane>
+                  <Label fx:id="SuperMarkerFullName" alignment="CENTER" prefHeight="26.0" prefWidth="163.0" text="Name" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="SuperMarketUserName" alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="UserName" textAlignment="CENTER" textFill="#f2f2f2">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="1.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onMouseClicked="#SuperMarketManagePage" prefHeight="35.0" prefWidth="150.0" text="Manage Product">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#SuperMarketIncomingOrders" prefHeight="35.0" prefWidth="150.0" text="Incoming Orders">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#SuperMarketBallance" prefHeight="35.0" prefWidth="150.0" text="Ballance">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#BackToLogin" prefHeight="35.0" prefWidth="150.0" text="Log Out">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane id="b" fx:id="SuperMarketBallance" prefHeight="650.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="72.0" layoutY="221.0" text="Label" visible="false" />
+                        <AnchorPane layoutX="14.0" layoutY="163.0" prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="SuperMarketBallanceLabel" alignment="CENTER" layoutX="183.0" layoutY="12.0" prefHeight="175.0" prefWidth="619.0" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font size="47.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="7.0" layoutY="14.0" prefHeight="91.0" prefWidth="415.0" text="Ballance" textFill="#090101">
+                           <font>
+                              <Font size="47.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="In" fx:id="SuperMarketIncomingOrders" prefHeight="650.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="IOTable" layoutX="70.0" layoutY="144.0" prefHeight="200.0" prefWidth="679.0">
+                          <columns>
+                            <TableColumn fx:id="IOProuctId" prefWidth="147.99996948242188" text="ProductId" />
+                            <TableColumn fx:id="IOOrderStatus" prefWidth="109.3333740234375" text="OrderStatus" />
+                              <TableColumn fx:id="IOTimePurchase" prefWidth="134.00006103515625" text="TimeOfPurchase" />
+                              <TableColumn fx:id="IOAmount" prefWidth="126.66668701171875" text="Amount" />
+                              <TableColumn fx:id="IOCusername" prefWidth="161.33331298828125" text="CUserName" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="56.0" layoutY="20.0" prefHeight="55.0" prefWidth="309.0" text="Incoming Orders">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutY="82.0" prefHeight="10.0" prefWidth="200.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="MP" fx:id="SuperMarkerManageProduct" prefHeight="650.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="40.0" prefHeight="215.0" prefWidth="966.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="43.0" text="Label" textFill="#e0dcdc" />
+                              <TableView fx:id="ManageProductTable" layoutX="38.0" layoutY="14.0" onMouseClicked="#ManageProductTableClicked" prefHeight="187.0" prefWidth="869.0">
+                                <columns>
+                                  <TableColumn fx:id="ManageProductName" prefWidth="139.33334350585938" text="ProductName" />
+                                  <TableColumn fx:id="ManageproductDescription" prefWidth="181.33334350585938" text="ProductDescription" />
+                                    <TableColumn fx:id="ManageProductId" prefWidth="138.66668701171875" text="ProductId" />
+                                    <TableColumn fx:id="ManageProductAmountAvailable" prefWidth="142.0" text="AmountAvailable" />
+                                    <TableColumn fx:id="ManageProductSoldOutProducts" prefWidth="133.33331298828125" text="NumberSoldOut" />
+                                    <TableColumn fx:id="ManageProductPrice" prefWidth="132.6666259765625" text="Price" />
+                                    <TableColumn fx:id="ManageTableImage" minWidth="11.3333740234375" prefWidth="18.666748046875" text="image" visible="false" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="242.0" prefHeight="240.0" prefWidth="966.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <children>
+                              <TextField fx:id="TextProductName" layoutX="48.0" layoutY="39.0" />
+                              <TextField fx:id="TextProductAmountAvailable" layoutX="48.0" layoutY="107.0" />
+                              <TextField fx:id="TextProductDescription" layoutX="305.0" layoutY="39.0" />
+                              <TextField fx:id="TextProductNumberOfSoldOut" layoutX="305.0" layoutY="107.0" />
+                              <TextField fx:id="TextProductId" layoutX="541.0" layoutY="39.0" />
+                              <TextField fx:id="TextProductPrice" layoutX="541.0" layoutY="107.0" />
+                              <Label layoutX="48.0" layoutY="12.0" text="ProductName" textFill="WHITE" />
+                              <Label layoutX="48.0" layoutY="78.0" text="AmountAvailable" textFill="WHITE" />
+                              <Label layoutX="301.0" layoutY="21.0" text="ProductDescription" textFill="#efefef" />
+                              <Label layoutX="305.0" layoutY="78.0" text="NumberOfSoldout" textFill="WHITE" />
+                              <Label layoutX="541.0" layoutY="21.0" text="ProductId" textFill="WHITE" />
+                              <Label layoutX="541.0" layoutY="78.0" text="Price" textFill="WHITE" />
+                              <Label layoutX="720.0" layoutY="5.0" text="ProductImage" textFill="#f8f8f8" />
+                              <Button layoutX="52.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#AddProduct" text="Add Product" />
+                              <Button layoutX="319.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#DeleteProduct" text="Delete Product" />
+                              <Button layoutX="566.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#UpdateProduct" text="Update Product" />
+                              <Button layoutX="798.0" layoutY="197.0" mnemonicParsing="false" onMouseClicked="#Clear" text="Clear" />
+                              <AnchorPane layoutX="720.0" layoutY="30.0" prefHeight="161.0" prefWidth="203.0" style="-fx-border-color: white;">
+                                 <children>
+                                    <ImageView fx:id="ProductImage" fitHeight="141.0" fitWidth="189.0" layoutX="7.0" layoutY="10.0" onMouseClicked="#ProductImageClicked" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="483.0" prefHeight="142.0" prefWidth="966.0" styleClass="background" stylesheets="@Main.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="482.0">
+                           <children>
+                              <TableView fx:id="NoticeBordTable" layoutX="31.0" layoutY="14.0" prefHeight="131.0" prefWidth="886.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="30.0">
+                                 <columns>
+                                    <TableColumn fx:id="NoticeBordProductName" prefWidth="139.33334350585938" text="ProductName" />
+                                    <TableColumn fx:id="NoticebordProductDexcription" prefWidth="181.33334350585938" text="ProductDescription" />
+                                    <TableColumn fx:id="NoticeBordProductId" prefWidth="138.66668701171875" text="ProductId" />
+                                    <TableColumn fx:id="NoticeBordAmountAvailable" prefWidth="132.0" text="AmountAvailable" />
+                                    <TableColumn fx:id="NoticeBordNumberSoldout" prefWidth="164.00006103515625" text="NumberSoldOut" />
+                                    <TableColumn fx:id="NoticebordPrice" prefWidth="131.33333333333337" text="Price" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="31.0" layoutY="6.0" prefHeight="17.0" prefWidth="97.0" text="Notice Bord" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

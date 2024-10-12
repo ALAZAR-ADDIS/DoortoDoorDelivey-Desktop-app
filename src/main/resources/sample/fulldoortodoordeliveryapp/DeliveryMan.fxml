@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.fulldoortodoordeliveryapp.DeliveryMan">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <VBox prefHeight="650.0" prefWidth="200.0" styleClass="background" stylesheets="@Main.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="DeliveryManProfilePic" fitHeight="175.0" fitWidth="174.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.333333333333343" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="14.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </AnchorPane>
+                  <Label fx:id="DeliveryManName" alignment="CENTER" prefHeight="19.0" prefWidth="172.0" text="Name" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="DeliveryManUserName" alignment="CENTER" prefHeight="17.0" prefWidth="192.0" text="UserName" textAlignment="CENTER" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="1.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onMouseClicked="#DeliveryManOrders" prefHeight="35.0" prefWidth="150.0" text="Orders">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="25.0" top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#DeliveryManBallance" prefHeight="35.0" prefWidth="150.0" text="Ballance">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#BackToLogin" prefHeight="35.0" prefWidth="150.0" text="Log Out">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane fx:id="DeliveryManOrderPage" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane id="ord" fx:id="DeliveryManOrdersPage" layoutX="-10.0" prefHeight="621.0" prefWidth="1007.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="72.0" layoutY="221.0" text="Label" visible="false" />
+                        <AnchorPane layoutX="11.0" layoutY="34.0" prefHeight="235.0" prefWidth="978.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="30.0">
+                           <children>
+                              <TableView fx:id="OrderTable" layoutX="34.0" layoutY="18.0" onMouseClicked="#OrderTableClicked" prefHeight="200.0" prefWidth="895.0" AnchorPane.topAnchor="18.0">
+                                <columns>
+                                  <TableColumn fx:id="OrderUsername" prefWidth="193.33334350585938" text="CUserName" />
+                                  <TableColumn fx:id="OrderProductId" prefWidth="162.00003051757812" text="ProductId" />
+                                    <TableColumn fx:id="OrderPickUpLocation" prefWidth="171.33331298828125" text="PickUpLoacation" />
+                                    <TableColumn fx:id="OderTimeOfPurchase" prefWidth="212.6666259765625" text="TimeOfPurchase" />
+                                    <TableColumn fx:id="OrderAmount" prefWidth="156.66656494140625" text="Amount" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="396.0" prefHeight="237.0" prefWidth="965.0" styleClass="background" stylesheets="@Main.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="400.0">
+                           <children>
+                              <TableView fx:id="AorderInfoTable" layoutX="14.0" layoutY="17.0" onMouseClicked="#AOTableClicked" prefHeight="205.0" prefWidth="788.0" AnchorPane.topAnchor="17.0">
+                                 <columns>
+                                    <TableColumn fx:id="AorderCustomerName" prefWidth="115.99998474121094" text="CustomerName" />
+                                    <TableColumn fx:id="AorderCustomerPno" prefWidth="99.99993896484375" text="CustomerPNo" />
+                                    <TableColumn fx:id="ASuperMarketName" prefWidth="124.66671752929688" text="SuperMarketName" />
+                                    <TableColumn fx:id="AorderSuperMarketLocation" prefWidth="129.3333740234375" text="SuperMarketLocation" />
+                                    <TableColumn fx:id="AorderSuperMarkerPno" prefWidth="111.33331298828125" text="SuperMarkerPno" />
+                                    <TableColumn fx:id="AOrderProducId" prefWidth="88.66668701171875" text="ProducId" />
+                                    <TableColumn fx:id="AorderAmount" prefWidth="119.33343505859375" text="Amount" />
+                                    <TableColumn fx:id="AorderInvoiceImage" minWidth="0.0" prefWidth="0.0" text="Image" visible="false" />
+                                    <TableColumn fx:id="AorderTimeofPurchase" minWidth="0.0" prefWidth="0.0" text="TimeOfpurchase" visible="false" />
+                                    <TableColumn fx:id="AorderCUserName" minWidth="0.0" prefWidth="0.0" text="CuserName" visible="false" />
+                                 </columns>
+                              </TableView>
+                              <Label fx:id="AOImageLabel" layoutX="816.0" layoutY="17.0" prefHeight="17.0" prefWidth="149.0" text="Label" textFill="#fdfdfd" />
+                              <Button layoutX="833.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#AOSummiteImageBtn" prefHeight="25.0" prefWidth="130.0" text="Summit image" />
+                              <AnchorPane layoutX="809.0" layoutY="43.0" prefHeight="151.0" prefWidth="157.0" style="-fx-border-color: white;" AnchorPane.leftAnchor="808.0">
+                                 <children>
+                                    <ImageView fx:id="AOInvoiceImage" fitHeight="143.0" fitWidth="136.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#AOImageClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="13.333333333333343" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="11.0" layoutY="277.0" prefHeight="115.0" prefWidth="986.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.333333333333371">
+                           <children>
+                              <TextField fx:id="OrderTextPID" editable="false" layoutX="28.0" layoutY="25.0" />
+                              <TextField fx:id="OrderTextPUL" editable="false" layoutX="264.0" layoutY="25.0" />
+                              <TextField fx:id="OrderTextTimeOfPurchase" editable="false" layoutX="537.0" layoutY="25.0" />
+                              <TextField fx:id="OrderTextCuxtomerUserName" editable="false" layoutX="782.0" layoutY="25.0" />
+                              <Button layoutX="358.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#OrderAccepteBtn" prefHeight="25.0" prefWidth="215.0" text="Accept Order" />
+                              <Label layoutX="28.0" layoutY="5.0" prefHeight="17.0" prefWidth="68.0" text="ProductId" textFill="#ebebeb" />
+                              <Label layoutX="264.0" layoutY="5.0" prefHeight="17.0" prefWidth="101.0" text="PickUpLocation" textFill="#fbfbfb" />
+                              <Label layoutX="537.0" layoutY="5.0" prefHeight="17.0" prefWidth="104.0" text="Time Of Purchase" textFill="WHITE" />
+                              <Label layoutX="782.0" layoutY="5.0" prefHeight="17.0" prefWidth="104.0" text="CuserName" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="14.0" layoutY="5.0" prefHeight="26.0" prefWidth="139.0" text="Accept Order" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="Bal" fx:id="DeliveryManBallance" prefHeight="650.0" prefWidth="986.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <children>
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="22.0" prefHeight="58.0" prefWidth="179.0" text="Ballance">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="-3.0" layoutY="111.0" prefHeight="200.0" prefWidth="397.0" styleClass="background" stylesheets="@Main.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="DeliveryManBallanceLabel" alignment="CENTER" layoutX="240.0" layoutY="14.0" prefHeight="171.0" prefWidth="526.0" text="Ballance" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

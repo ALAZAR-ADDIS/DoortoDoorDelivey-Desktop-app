@@ -1,0 +1,45 @@
+.button {
+    -fx-background-color: linear-gradient(to bottom, #001a28,#08334a);;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #001a28, #08334a);;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-border-width: 0.8;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+.button:pressed {
+    -fx-background-color:linear-gradient(to bottom, #001a28, #08334a);;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-opacity: 0.6 ;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+.background{
+    -fx-background-color: linear-gradient(to bottom, #001a28, #7fb4d2);
+    -fx-text-fill: white;
+
+}
+
+
+.Item{
+    -fx-background-radius: 100px;
+    -fx-border-width: 3px;
+    -fx-border-color:linear-gradient(to bottom, #001a28, #7fb4d2) ;
+
+}
+
+
+
+
+
